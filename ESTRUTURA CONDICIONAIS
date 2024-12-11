@@ -1,1 +1,94 @@
+# Estruturas condicionais 
+As estruturas condicionais em JavaScript permitem que o programa tome decisões com base em condições específicas.
+Dependendo do resultado de uma condição (verdadeira ou falsa), diferentes blocos de código podem ser executados.
+1. Use if/else para condições dinâmicas ou comparações mais complexas.
+2. Use switch/case quando trabalhar com valores fixos e múltiplas opções.
+
+Existem duas principais formas de estruturas condicionais em JavaScript: if/else e switch/case.
+
+function atendimentoFisioterapia() {
+    let dor = prompt("Você está sentindo dor? (sim/não)").toLowerCase();
+    
+    if (dor === "sim") {
+        let localDor = prompt("Onde? (1) Costas (2) Joelho (3) Ombro (4) Outro").toLowerCase();
+        
+        if (localDor === "1") {
+            let intensidade = prompt("Intensidade: leve, moderada ou intensa?").toLowerCase();
+            if (intensidade === "intensa") {
+                console.log("Procure um fisioterapeuta imediatamente.");
+            } else {
+                console.log("Consulte um fisioterapeuta em breve.");
+            }
+        } else if (localDor === "2") {
+            console.log("Evite sobrecarregar o joelho.");
+        } else if (localDor === "3") {
+            console.log("Aplique gelo e consulte um fisioterapeuta.");
+        } else {
+            console.log("Consulte um fisioterapeuta para avaliação.");
+        }
+    } else {
+        let atividade = prompt("Você pratica exercícios? (sim/não)").toLowerCase();
+        if (atividade === "sim") {
+            console.log("Ótimo! Continue sua rotina.");
+        } else {
+            console.log("Recomendamos começar uma rotina leve de exercícios.");
+        }
+    }
+}
+
+// Chamada da função
+atendimentoFisioterapia();
+
+function pesquisaSupermercado() {
+    let satisfacao = prompt("Satisfação geral? (1) Muito Satisfeito (2) Satisfeito (3) Neutro (4) Insatisfeito (5) Muito Insatisfeito");
+
+    switch (satisfacao) {
+        case "1":
+            console.log("Que ótimo! Agradecemos pelo seu feedback positivo!");
+            break;
+        case "2":
+            console.log("Ficamos felizes em saber que você está satisfeito.");
+            break;
+        case "3":
+            console.log("Agradecemos pela sua avaliação neutra.");
+            break;
+        case "4":
+            console.log("Sentimos muito pela insatisfação. O que podemos melhorar?");
+            break;
+        case "5":
+            console.log("Lamentamos saber que você está muito insatisfeito.");
+            break;
+        default:
+            console.log("Opção inválida.");
+            return;
+    }
+
+    let atendimento = prompt("Avalie o atendimento: (1) Ótimo (2) Bom (3) Regular (4) Ruim");
+    if (atendimento === "1") console.log("Ficamos felizes que você recebeu um ótimo atendimento!");
+    else if (atendimento === "2") console.log("Obrigado! Tentamos fazer o nosso melhor.");
+    else if (atendimento === "3") console.log("Agradecemos pelo seu feedback.");
+    else if (atendimento === "4") console.log("Sentimos muito pelo atendimento ruim.");
+    else console.log("Opção inválida.");
+
+    let ambiente = prompt("Avalie o ambiente: (1) Excelente (2) Bom (3) Regular (4) Precisa melhorar");
+    switch (ambiente) {
+        case "1":
+            console.log("Que bom que você gostou do ambiente!");
+            break;
+        case "2":
+            console.log("Agradecemos seu feedback positivo sobre o ambiente.");
+            break;
+        case "3":
+            console.log("Obrigado pela sua avaliação.");
+            break;
+        case "4":
+            console.log("Sentimos muito. Sua opinião é importante.");
+            break;
+        default:
+            console.log("Opção inválida.");
+    }
+}
+
+// Chamada da função
+pesquisaSupermercado();
 
