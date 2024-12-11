@@ -1,4 +1,5 @@
-Tipos primitivos:
+Os tipos primitivos em JavaScript representam os dados mais básicos e imutáveis que não possuem métodos ou propriedades próprios 
+(embora envoltórios temporários possam ser usados para operações). São os blocos de construção fundamentais para manipulação de dados em JavaScript.
 
 // Primeira parte: Nome e Idade
 
@@ -84,5 +85,7 @@ const peso = 80;
 const altura = 1.80;
 const imc = peso / (altura * altura);
 console.log(`O IMC é ${imc.toFixed(2)}. Seu peso está normal`);
+
+
 
 
