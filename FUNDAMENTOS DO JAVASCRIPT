@@ -1,1 +1,52 @@
+Os fundamentos de JavaScript são os conceitos e práticas essenciais que formam a base do desenvolvimento em JavaScript. 
+Esses fundamentos são essenciais para quem está começando a aprender a linguagem e são usados em quase todos os tipos de programas, de páginas web a aplicativos mais complexos.
+
+Descrição do Exercício
+Crie um array com 3 elementos.
+Remova o último elemento do array usando o método pop().
+Adicione elementos ao final do array com push().
+Ordene o array em ordem alfabética com o método sort().
+Conte a quantidade de elementos no array.
+
+Passo a Passo do Exercício
+Criação do array:
+
+O array começa com três elementos: "Congresso de Tecnologia", "Palestra de Psicologia" e "Seminário de Educação".
+Remover o último elemento:
+
+Usamos o método pop() para remover "Seminário de Educação".
+Adicionar elementos ao final:
+
+Usamos o método push() para adicionar "Workshop de Biologia" e "Curso de Inteligência Artificial" ao final do array.
+Ordenação alfabética:
+
+Usamos o método sort() para organizar os elementos do array em ordem alfabética.
+Contagem de elementos:
+
+Usamos a propriedade length para contar o número de elementos no array após todas as operações.
+Explicação dos Métodos Usados
+pop(): Remove o último elemento de um array.
+push(): Adiciona um ou mais elementos ao final de um array.
+sort(): Ordena os elementos de um array em ordem alfabética ou numérica.
+length: Retorna o número de elementos presentes em um array
+
+// Passo 1: Criando um array com 3 elementos
+let meusEventos = ["Congresso de Tecnologia", "Palestra de Psicologia", "Seminário de Educação"];
+
+console.log("Array inicial:", meusEventos);
+
+// Passo 2: Remover o último elemento do array
+meusEventos.pop();
+console.log("Após remover o último elemento:", meusEventos);
+
+// Passo 3: Adicionar elementos ao final do array
+meusEventos.push("Workshop de Biologia", "Curso de Inteligência Artificial");
+console.log("Após adicionar novos elementos:", meusEventos);
+
+// Passo 4: Ordenar o array em ordem alfabética
+meusEventos.sort();
+console.log("Array em ordem alfabética:", meusEventos);
+
+// Passo 5: Contar o número de elementos no array
+console.log("Quantidade de elementos no array:", meusEventos.length);
 
