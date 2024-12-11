@@ -1,1 +1,81 @@
+Funcionalidades do Algoritmo
+Filtrar por Área de Interesse:
 
+O método filter é usado para retornar apenas os eventos que pertencem à área escolhida.
+Filtrar por Custo (Gratuito ou Pago):
+
+Um segundo filtro é aplicado para retornar eventos com base na escolha do usuário (gratuito ou pago).
+Interação com o Usuário:
+
+prompt é usado para coletar dados (em ambientes compatíveis, como navegadores).
+console.log exibe os resultados para o usuário.
+Explicação
+Funções organizam a lógica, facilitando a reutilização.
+Métodos de Arrays como filter ajudam a manipular listas de dados.
+Operadores lógicos (===, &&, etc.) são usados em condições.
+Estruturas condicionais garantem respostas adequadas a diferentes cenários.
+
+CÓDIGO:
+
+// Lista de eventos acadêmicos (array de objetos)
+const eventos = [
+  { nome: "Congresso de Tecnologia", area: "Tecnologia", gratuito: true },
+  { nome: "Workshop de Biologia", area: "Biologia", gratuito: false },
+  { nome: "Palestra de Psicologia", area: "Psicologia", gratuito: true },
+  { nome: "Curso de Inteligência Artificial", area: "Tecnologia", gratuito: false },
+  { nome: "Seminário de Educação", area: "Educação", gratuito: true },
+];
+
+// Função para exibir todas as áreas disponíveis
+function listarAreas() {
+  // Extrai as áreas únicas dos eventos usando map e Set
+  const areas = [...new Set(eventos.map(evento => evento.area))];
+  console.log("Áreas disponíveis:");
+  areas.forEach(area => console.log(`- ${area}`));
+}
+
+// Função para filtrar eventos por área
+function filtrarPorArea(areaInteresse) {
+  return eventos.filter(evento => evento.area.toLowerCase() === areaInteresse.toLowerCase());
+}
+
+// Função para filtrar eventos por custo (gratuito ou pago)
+function filtrarPorCusto(eventosFiltrados, ehGratuito) {
+  return eventosFiltrados.filter(evento => evento.gratuito === ehGratuito);
+}
+
+// Função principal para interação com o usuário
+function mostrarEventos() {
+  // Listar as áreas disponíveis para o usuário
+  listarAreas();
+
+  // Pedir a área de interesse ao usuário
+  const areaInteresse = prompt("Digite a área de interesse (exemplo: Tecnologia):");
+
+  // Filtrar eventos pela área
+  let eventosFiltrados = filtrarPorArea(areaInteresse);
+
+  // Verificar se há eventos na área escolhida
+  if (eventosFiltrados.length === 0) {
+    console.log(`Nenhum evento encontrado na área de ${areaInteresse}.`);
+    return;
+  }
+
+  // Perguntar ao usuário se deseja eventos gratuitos ou pagos
+  const custo = prompt("Você deseja eventos gratuitos? (sim/não):").toLowerCase();
+  const ehGratuito = custo === "sim";
+
+  // Filtrar eventos pelo custo
+  eventosFiltrados = filtrarPorCusto(eventosFiltrados, ehGratuito);
+
+  // Exibir os eventos filtrados
+  if (eventosFiltrados.length === 0) {
+    console.log(`Nenhum evento ${ehGratuito ? "gratuito" : "pago"} encontrado na área de ${areaInteresse}.`);
+  } else {
+    console.log("Eventos disponíveis:");
+    eventosFiltrados.forEach(evento => console.log(`- ${evento.nome}`));
+  }
+}
+
+// Executar o programa
+mostrarEventos();
